@@ -1,0 +1,31 @@
+TEST REPORT
+Suite: SauceDemo Tests
+Started: 2026-04-09 17:23:17
+
+START: testLoginSuccess
+PASS: testLoginSuccess - 610 ms
+START: testEmptyUsernameShowsError
+PASS: testEmptyUsernameShowsError - 339 ms
+START: testOneCharacterCredentialsShowError
+PASS: testOneCharacterCredentialsShowError - 547 ms
+START: testLoginWithDataProvider
+PASS: testLoginWithDataProvider - 780 ms
+START: testLoginWithDataProvider
+PASS: testLoginWithDataProvider - 725 ms
+START: testLoginWithDataProvider
+PASS: testLoginWithDataProvider - 776 ms
+START: testAddToCart
+PASS: testAddToCart - 1392 ms
+START: testRemoveFromCart
+PASS: testRemoveFromCart - 1291 ms
+START: testCheckoutSuccess
+PASS: testCheckoutSuccess - 2373 ms
+START: testSortProductsLowToHigh
+PASS: testSortProductsLowToHigh - 1567 ms
+
+SUMMARY
+PASS: 10
+FAIL: 0
+SKIP: 0
+TOTAL TIME: 30 s
+Finished: 2026-04-09 17:23:48

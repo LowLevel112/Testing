@@ -1,8 +1,8 @@
-package com.messenger.automation.tests;
+package com.saucedemo.tests;
 
-import com.messenger.automation.base.BaseTest;
-import com.messenger.automation.pages.InventoryPage;
-import com.messenger.automation.pages.SauceDemoLoginPage;
+import com.saucedemo.base.BaseTest;
+import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.pages.SauceDemoLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,9 +25,6 @@ public class TC_SortProductsTest extends BaseTest {
         List<Double> expectedPrices = new ArrayList<>(actualPrices);
         Collections.sort(expectedPrices);
 
-        Assert.assertEquals(
-                actualPrices,
-                expectedPrices,
-                "Danh sach gia khong duoc sap xep tang dan.");
+        Assert.assertEquals(actualPrices, expectedPrices, "Danh sach gia khong duoc sap xep tang dan.");
     }
 }

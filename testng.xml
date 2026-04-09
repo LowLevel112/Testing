@@ -1,14 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SauceDemo Automation Suite">
+    <listeners>
+        <listener class-name="com.saucedemo.listeners.TextReportListener"/>
+    </listeners>
     <test name="SauceDemo Tests">
         <classes>
-            <class name="com.messenger.automation.tests.TC008_SendTextMessageTest"/>
-            <class name="com.messenger.automation.tests.TC023_SendEmptyMessageTest"/>
-            <class name="com.messenger.automation.tests.TC025_SendOneCharacterTest"/>
-            <class name="com.messenger.automation.tests.TC_AddToCartTest"/>
-            <class name="com.messenger.automation.tests.TC_RemoveFromCartTest"/>
-            <class name="com.messenger.automation.tests.TC_CheckoutSuccessTest"/>
-            <class name="com.messenger.automation.tests.TC_SortProductsTest"/>
+            <class name="com.saucedemo.tests.TC_LoginTest"/>
+            <class name="com.saucedemo.tests.TC_LoginWithEmptyCredentialsTest"/>
+            <class name="com.saucedemo.tests.TC_LoginWithInvalidCredentialsTest"/>
+            <class name="com.saucedemo.tests.TC_LoginDataDrivenTest"/>
+            <class name="com.saucedemo.tests.TC_AddToCartTest"/>
+            <class name="com.saucedemo.tests.TC_RemoveFromCartTest"/>
+            <class name="com.saucedemo.tests.TC_CheckoutSuccessTest"/>
+            <class name="com.saucedemo.tests.TC_SortProductsTest"/>
         </classes>
     </test>
 </suite>

@@ -1,9 +1,9 @@
-package com.messenger.automation.tests;
+package com.saucedemo.tests;
 
-import com.messenger.automation.base.BaseTest;
-import com.messenger.automation.pages.CartPage;
-import com.messenger.automation.pages.InventoryPage;
-import com.messenger.automation.pages.SauceDemoLoginPage;
+import com.saucedemo.base.BaseTest;
+import com.saucedemo.pages.CartPage;
+import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.pages.SauceDemoLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,16 +20,11 @@ public class TC_AddToCartTest extends BaseTest {
         inventoryPage.waitUntilLoaded();
         inventoryPage.addProductToCart(PRODUCT_NAME);
 
-        Assert.assertEquals(
-                inventoryPage.getCartBadgeCount(),
-                1,
-                "So luong san pham trong gio hang khong dung.");
+        Assert.assertEquals(inventoryPage.getCartBadgeCount(), 1, "So luong san pham trong gio hang khong dung.");
 
         inventoryPage.openCart();
         cartPage.waitUntilLoaded();
 
-        Assert.assertTrue(
-                cartPage.containsProduct(PRODUCT_NAME),
-                "Gio hang khong chua san pham vua them.");
+        Assert.assertTrue(cartPage.containsProduct(PRODUCT_NAME), "Gio hang khong chua san pham vua them.");
     }
 }

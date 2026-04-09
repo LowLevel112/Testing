@@ -1,9 +1,9 @@
-package com.messenger.automation.tests;
+package com.saucedemo.tests;
 
-import com.messenger.automation.base.BaseTest;
-import com.messenger.automation.pages.CartPage;
-import com.messenger.automation.pages.InventoryPage;
-import com.messenger.automation.pages.SauceDemoLoginPage;
+import com.saucedemo.base.BaseTest;
+import com.saucedemo.pages.CartPage;
+import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.pages.SauceDemoLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,12 +24,7 @@ public class TC_RemoveFromCartTest extends BaseTest {
 
         cartPage.removeProduct(PRODUCT_NAME);
 
-        Assert.assertTrue(
-                cartPage.isCartEmpty(),
-                "Gio hang phai rong sau khi xoa san pham.");
-        Assert.assertEquals(
-                cartPage.getItemCount(),
-                0,
-                "So luong san pham trong gio phai bang 0.");
+        Assert.assertTrue(cartPage.isCartEmpty(), "Gio hang phai rong sau khi xoa san pham.");
+        Assert.assertEquals(cartPage.getItemCount(), 0, "So luong san pham trong gio phai bang 0.");
     }
 }

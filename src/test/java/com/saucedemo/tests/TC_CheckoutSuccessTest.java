@@ -1,10 +1,10 @@
-package com.messenger.automation.tests;
+package com.saucedemo.tests;
 
-import com.messenger.automation.base.BaseTest;
-import com.messenger.automation.pages.CartPage;
-import com.messenger.automation.pages.CheckoutPage;
-import com.messenger.automation.pages.InventoryPage;
-import com.messenger.automation.pages.SauceDemoLoginPage;
+import com.saucedemo.base.BaseTest;
+import com.saucedemo.pages.CartPage;
+import com.saucedemo.pages.CheckoutPage;
+import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.pages.SauceDemoLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +16,7 @@ public class TC_CheckoutSuccessTest extends BaseTest {
         SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver, wait);
         InventoryPage inventoryPage = new InventoryPage(driver, wait);
         CartPage cartPage = new CartPage(driver, wait);
-        CheckoutPage checkoutPage = new CheckoutPage(wait);
+        CheckoutPage checkoutPage = new CheckoutPage(driver, wait);
 
         loginPage.login("standard_user", "secret_sauce");
         inventoryPage.waitUntilLoaded();
@@ -29,9 +29,6 @@ public class TC_CheckoutSuccessTest extends BaseTest {
         checkoutPage.clickContinue();
         checkoutPage.clickFinish();
 
-        Assert.assertEquals(
-                checkoutPage.getSuccessMessage(),
-                "Thank you for your order!",
-                "Thong bao checkout thanh cong khong dung.");
+        Assert.assertEquals(checkoutPage.getSuccessMessage(), "Thank you for your order!", "Thong bao checkout thanh cong khong dung.");
     }
 }
