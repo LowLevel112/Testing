@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo Automation Suite">
+    <test name="SauceDemo Tests">
+        <classes>
+            <class name="com.messenger.automation.tests.TC008_SendTextMessageTest"/>
+            <class name="com.messenger.automation.tests.TC023_SendEmptyMessageTest"/>
+            <class name="com.messenger.automation.tests.TC025_SendOneCharacterTest"/>
+            <class name="com.messenger.automation.tests.TC_AddToCartTest"/>
+            <class name="com.messenger.automation.tests.TC_RemoveFromCartTest"/>
+            <class name="com.messenger.automation.tests.TC_CheckoutSuccessTest"/>
+            <class name="com.messenger.automation.tests.TC_SortProductsTest"/>
+        </classes>
+    </test>
+</suite>
