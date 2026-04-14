@@ -1,4 +1,4 @@
-package com.messenger.automation.base;
+package com.messenger.automation.backup.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

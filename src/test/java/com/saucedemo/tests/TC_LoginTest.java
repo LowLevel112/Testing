@@ -1,28 +1,26 @@
 package com.saucedemo.tests;
 
 import com.saucedemo.base.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import com.saucedemo.pages.SauceDemoLoginPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_LoginTest extends BaseTest {
 
-    @Test
-    public void testLoginSuccess() {
-        WebElement usernameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user-name")));
-        usernameInput.sendKeys("standard_user");
+    @Test(description = "Verify successful login with valid credentials")
+    public void testLogin_WhenValidCredentials_ShouldRedirectToInventory() {
+        // GIVEN: User is on login page
+        SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver, wait);
 
-        WebElement passwordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
-        passwordInput.sendKeys("secret_sauce");
+        // WHEN: User enters valid username and password and clicks login
+        loginPage.login("standard_user", "secret_sauce");
 
-        WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("login-button")));
-        loginButton.click();
-
+        // THEN: User should be redirected to inventory page
         wait.until(ExpectedConditions.urlContains("inventory.html"));
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("inventory.html"),
-                "URL khong chuyen sang trang inventory sau khi login thanh cong.");
+                "Login should redirect to inventory page with valid credentials"
+        );
     }
 }

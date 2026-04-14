@@ -1,5 +1,8 @@
 package com.saucedemo.base;
 
+import com.messenger.automation.utils.ConfigReader;
+import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.pages.SauceDemoLoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BaseTest {
-    protected static final String BASE_URL = "https://www.saucedemo.com/";
+    protected String baseUrl;
 
     protected WebDriver driver;
     protected WebDriverWait wait;
@@ -41,8 +44,19 @@ public class BaseTest {
 
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        driver.get(BASE_URL);
+
+        baseUrl = ConfigReader.getProperty("base.url");
+        driver.get(baseUrl);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-button")));
+    }
+
+    protected void loginAsStandardUser() {
+        String user = ConfigReader.getProperty("standard.user");
+        String pass = ConfigReader.getProperty("standard.password");
+        SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver, wait);
+        loginPage.login(user, pass);
+        InventoryPage inventory = new InventoryPage(driver, wait);
+        inventory.waitUntilLoaded();
     }
 
     @AfterMethod

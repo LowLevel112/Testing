@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="/add_to_cart (snapshot).feature">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="/add_to_cart (snapshot).feature" />
+              <option name="originalContent" value="Feature: Add to cart feature (BDD examples)&#10;  In order to verify add to cart functionality&#10;  As a tester&#10;  I want readable scenarios demonstrating positive and negative flows&#10;&#10;  Scenario: Add a product to the cart successfully&#10;    Given I am logged in as &quot;standard_user&quot;&#10;    When I add &quot;Sauce Labs Backpack&quot; to my cart&#10;    Then the cart badge should show &quot;1&quot;&#10;&#10;  Scenario: Removing product empties the cart&#10;    Given I am logged in as &quot;standard_user&quot;&#10;    When I add &quot;Sauce Labs Bike Light&quot; to my cart&#10;    And I open the cart and remove that product&#10;    Then the cart page should contain &quot;Sauce Labs Bike Light&quot;&#10;" />
+              <option name="updatedContent" value="Feature: Add to cart feature (BDD examples)&#10;  In order to verify add to cart functionality&#10;  As a tester&#10;  I want readable scenarios demonstrating positive and negative flows&#10;&#10;  Scenario: Add a product to the cart successfully&#10;    Given I am logged in as &quot;standard_user&quot;&#10;    When I add &quot;Sauce Labs Backpack&quot; to my cart&#10;    Then the cart badge should show &quot;1&quot;&#10;&#10;  Scenario: Removing product empties the cart&#10;    Given I am logged in as &quot;standard_user&quot;&#10;    When I add &quot;Sauce Labs Bike Light&quot; to my cart&#10;    And I open the cart and remove that product&#10;    Then the cart should be empty&#10;&#10;  Scenario: Attempting to checkout with empty cart&#10;    Given I am logged in as &quot;standard_user&quot;&#10;    When I open the cart&#10;    Then the cart should be empty" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

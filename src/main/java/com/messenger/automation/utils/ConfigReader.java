@@ -20,7 +20,12 @@ public final class ConfigReader {
     private ConfigReader() {
     }
 
+    // Backwards-compatible name and clearer API for tests
     public static String get(String key) {
         return PROPERTIES.getProperty(key);
+    }
+
+    public static String getProperty(String key) {
+        return get(key);
     }
 }

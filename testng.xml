@@ -2,17 +2,21 @@
 <suite name="SauceDemo Automation Suite">
     <listeners>
         <listener class-name="com.saucedemo.listeners.TextReportListener"/>
+        <listener class-name="com.saucedemo.listeners.HtmlReportListener"/>
     </listeners>
     <test name="SauceDemo Tests">
         <classes>
+            <!-- Unit Tests with Given-When-Then pattern -->
             <class name="com.saucedemo.tests.TC_LoginTest"/>
-            <class name="com.saucedemo.tests.TC_LoginWithEmptyCredentialsTest"/>
-            <class name="com.saucedemo.tests.TC_LoginWithInvalidCredentialsTest"/>
             <class name="com.saucedemo.tests.TC_LoginDataDrivenTest"/>
             <class name="com.saucedemo.tests.TC_AddToCartTest"/>
             <class name="com.saucedemo.tests.TC_RemoveFromCartTest"/>
             <class name="com.saucedemo.tests.TC_CheckoutSuccessTest"/>
             <class name="com.saucedemo.tests.TC_SortProductsTest"/>
+            <class name="com.saucedemo.tests.TC_LoginWithEmptyCredentialsTest"/>
+            <class name="com.saucedemo.tests.TC_LoginWithInvalidCredentialsTest"/>
+            <!-- Cucumber runner -->
+            <class name="com.saucedemo.tests.CucumberTestRunner"/>
         </classes>
     </test>
 </suite>

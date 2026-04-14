@@ -96,16 +96,20 @@ public class HtmlReportListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        long totalDuration = System.currentTimeMillis() - suiteStartTime;
-        int passed = context.getPassedTests().size();
-        int failed = context.getFailedTests().size();
-        int skipped = context.getSkippedTests().size();
-        int total = passed + failed + skipped;
+        try {
+            long totalDuration = System.currentTimeMillis() - suiteStartTime;
+            int passed = context.getPassedTests().size();
+            int failed = context.getFailedTests().size();
+            int skipped = context.getSkippedTests().size();
+            int total = passed + failed + skipped;
 
-        writeTestTable();
-        writeSummary(passed, failed, skipped, total, totalDuration);
-        writeHtmlFooter();
-        closeWriter();
+            writeTestTable();
+            writeSummary(passed, failed, skipped, total, totalDuration);
+            writeHtmlFooter();
+            closeWriter();
+        } catch (IOException e) {
+            throw new RuntimeException("Error writing HTML report", e);
+        }
     }
 
     private void writeHtmlHeader(ITestContext context) throws IOException {
@@ -401,4 +405,5 @@ public class HtmlReportListener implements ITestListener {
         }
     }
 }
+
 
