@@ -4,23 +4,21 @@ import com.saucedemo.base.BaseTest;
 import com.saucedemo.pages.CartPage;
 import com.saucedemo.pages.CheckoutPage;
 import com.saucedemo.pages.InventoryPage;
-import com.saucedemo.pages.SauceDemoLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_CheckoutSuccessTest extends BaseTest {
-    private static final String PRODUCT_NAME = "Sauce Labs Backpack";
 
-    @Test
-    public void testCheckoutSuccess() {
-        SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver, wait);
+    @Test(dataProvider = "productNames", dataProviderClass = ProductDataProvider.class,
+          description = "Verify successful checkout with a product")
+    public void testCheckoutSuccess(String productName) {
         InventoryPage inventoryPage = new InventoryPage(driver, wait);
         CartPage cartPage = new CartPage(driver, wait);
         CheckoutPage checkoutPage = new CheckoutPage(driver, wait);
 
-        loginPage.login("standard_user", "secret_sauce");
+        loginAsStandardUser();
         inventoryPage.waitUntilLoaded();
-        inventoryPage.addProductToCart(PRODUCT_NAME);
+        inventoryPage.addProductToCart(productName);
         inventoryPage.openCart();
         cartPage.waitUntilLoaded();
         cartPage.clickCheckout();

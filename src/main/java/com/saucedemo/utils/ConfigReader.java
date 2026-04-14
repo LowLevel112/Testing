@@ -1,4 +1,4 @@
-package com.messenger.automation.utils;
+package com.saucedemo.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

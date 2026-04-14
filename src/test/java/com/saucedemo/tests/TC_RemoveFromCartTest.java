@@ -9,21 +9,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_RemoveFromCartTest extends BaseTest {
-    private static final String PRODUCT_NAME = "Sauce Labs Backpack";
 
-    @Test(description = "Verify removing product from cart empties the cart")
-    public void testRemoveFromCart_WhenProductInCart_ShouldEmptyCart() {
+    @Test(dataProvider = "productNames", dataProviderClass = ProductDataProvider.class,
+          description = "Verify removing product from cart empties the cart")
+    public void testRemoveFromCart_WhenProductInCart_ShouldEmptyCart(String productName) {
         // GIVEN: User has added a product to cart and is on cart page
         loginAsStandardUser();
         InventoryPage inventoryPage = new InventoryPage(driver, wait);
         CartPage cartPage = new CartPage(driver, wait);
 
-        inventoryPage.addProductToCart(PRODUCT_NAME);
+        inventoryPage.addProductToCart(productName);
         inventoryPage.openCart();
         cartPage.waitUntilLoaded();
 
         // WHEN: User removes the product from cart
-        cartPage.removeProduct(PRODUCT_NAME);
+        cartPage.removeProduct(productName);
 
         // THEN: Cart should be empty
         Assert.assertTrue(cartPage.isCartEmpty(),
@@ -51,14 +51,15 @@ public class TC_RemoveFromCartTest extends BaseTest {
                 "Cart should remain empty when attempting checkout");
     }
 
-    @Test(description = "Verify adding same product multiple times increases quantity correctly")
-    public void testAddToCart_WhenAlreadyAdded_ShouldNotDuplicate() {
+    @Test(dataProvider = "productNames", dataProviderClass = ProductDataProvider.class,
+          description = "Verify adding same product multiple times increases quantity correctly")
+    public void testAddToCart_WhenAlreadyAdded_ShouldNotDuplicate(String productName) {
         // GIVEN: User is logged in and on inventory page
         loginAsStandardUser();
         InventoryPage inventoryPage = new InventoryPage(driver, wait);
 
         // WHEN: User adds the same product
-        inventoryPage.addProductToCart(PRODUCT_NAME);
+        inventoryPage.addProductToCart(productName);
         int initialBadge = inventoryPage.getCartBadgeCount();
 
         // THEN: Cart badge should show 1 (SauceDemo doesn't allow duplicate items in cart)

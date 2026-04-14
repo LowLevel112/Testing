@@ -1,15 +1,14 @@
 package com.saucedemo.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
 
     private final By firstNameInput = By.id("first-name");
     private final By lastNameInput = By.id("last-name");
@@ -30,8 +29,7 @@ public class CheckoutPage {
     }
 
     public void clickContinue() {
-        WebElement continueElement = wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", continueElement);
+        wait.until(ExpectedConditions.elementToBeClickable(continueButton)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(finishButton));
     }
 

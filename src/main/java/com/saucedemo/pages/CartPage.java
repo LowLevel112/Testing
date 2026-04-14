@@ -1,15 +1,14 @@
 package com.saucedemo.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
 
     private final By cartContainer = By.id("cart_contents_container");
     private final By cartItems = By.className("cart_item");
@@ -36,8 +35,7 @@ public class CartPage {
                 + productName + "']");
         By removeButton = By.xpath("//div[@class='cart_item' and .//div[text()='" + productName
                 + "']]//button[text()='Remove']");
-        WebElement removeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(removeButton));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", removeElement);
+        wait.until(ExpectedConditions.elementToBeClickable(removeButton)).click();
         wait.until(ExpectedConditions.invisibilityOfElementLocated(productNameLocator));
     }
 
@@ -51,7 +49,7 @@ public class CartPage {
 
     public void clickCheckout() {
         WebElement checkoutElement = wait.until(ExpectedConditions.visibilityOfElementLocated(checkoutButton));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", checkoutElement);
+        checkoutElement.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameInput));
     }
 }

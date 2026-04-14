@@ -2,6 +2,7 @@ package com.saucedemo.tests;
 
 import com.saucedemo.base.BaseTest;
 import com.saucedemo.pages.SauceDemoLoginPage;
+import com.saucedemo.utils.ConfigReader;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +15,7 @@ public class TC_LoginTest extends BaseTest {
         SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver, wait);
 
         // WHEN: User enters valid username and password and clicks login
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(ConfigReader.getProperty("standard.user"), ConfigReader.getProperty("standard.password"));
 
         // THEN: User should be redirected to inventory page
         wait.until(ExpectedConditions.urlContains("inventory.html"));

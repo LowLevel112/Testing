@@ -4,7 +4,7 @@
 
 📊 SUITE INFORMATION
 ├─ Suite Name: SauceDemo Tests
-├─ Started: 2026-04-14 11:12:46
+├─ Started: 2026-04-14 12:55:58
 └─ Date: 2026-04-14
 
 📋 TEST DETAILS
@@ -12,35 +12,39 @@
 ┌─────┬──────────────────────────────────────────────┬──────────┬────────────┐
 │ No. │ Test Name                                    │ Status   │ Duration   │
 ├─────┼──────────────────────────────────────────────┼──────────┼────────────┤
-│ 1   │ testLogin_WhenValidCredentials_ShouldRe...   │ ✅ PASS   │    392 ms   │
-│ 2   │ testLoginWithMultipleCredentials_WhenVa...   │ ✅ PASS   │    363 ms   │
-│ 3   │ testLoginWithMultipleCredentials_WhenVa...   │ ✅ PASS   │    682 ms   │
-│ 4   │ testLoginWithMultipleCredentials_WhenVa...   │ ✅ PASS   │    757 ms   │
-│ 5   │ testAddToCart_WhenValidProduct_ShouldIn...   │ ✅ PASS   │   1159 ms   │
-│ 6   │ testAddToCart_WhenAlreadyAdded_ShouldNo...   │ ✅ PASS   │    879 ms   │
-│ 7   │ testCheckout_WithEmptyCart_ShouldShowError   │ ✅ PASS   │    430 ms   │
-│ 8   │ testRemoveFromCart_WhenProductInCart_Sh...   │ ✅ PASS   │    415 ms   │
-│ 9   │ testCheckoutSuccess                          │ ✅ PASS   │    818 ms   │
-│ 10  │ testSortProductsLowToHigh                    │ ✅ PASS   │    522 ms   │
-│ 11  │ testEmptyUsernameShowsError                  │ ✅ PASS   │    115 ms   │
-│ 12  │ testOneCharacterCredentialsShowError         │ ✅ PASS   │    466 ms   │
-│ 13  │ runScenario                                  │ ✅ PASS   │   2266 ms   │
-│ 14  │ runScenario                                  │ ✅ PASS   │   2453 ms   │
-│ 15  │ runScenario                                  │ ✅ PASS   │   1706 ms   │
+│ 1   │ testLogin_WhenValidCredentials_ShouldRe...   │ ✅ PASS   │    710 ms   │
+│ 2   │ testLoginWithMultipleCredentials_WhenVa...   │ ✅ PASS   │    851 ms   │
+│ 3   │ testLoginWithMultipleCredentials_WhenVa...   │ ✅ PASS   │    629 ms   │
+│ 4   │ testLoginWithMultipleCredentials_WhenVa...   │ ✅ PASS   │    820 ms   │
+│ 5   │ testAddToCart_WhenValidProduct_ShouldIn...   │ ✅ PASS   │   1056 ms   │
+│ 6   │ testAddToCart_WhenValidProduct_ShouldIn...   │ ✅ PASS   │   1190 ms   │
+│ 7   │ testAddToCart_WhenAlreadyAdded_ShouldNo...   │ ✅ PASS   │    638 ms   │
+│ 8   │ testAddToCart_WhenAlreadyAdded_ShouldNo...   │ ✅ PASS   │    574 ms   │
+│ 9   │ testCheckout_WithEmptyCart_ShouldShowError   │ ✅ PASS   │   1456 ms   │
+│ 10  │ testRemoveFromCart_WhenProductInCart_Sh...   │ ✅ PASS   │    681 ms   │
+│ 11  │ testRemoveFromCart_WhenProductInCart_Sh...   │ ✅ PASS   │   1395 ms   │
+│ 12  │ testCheckoutSuccess                          │ ✅ PASS   │   1685 ms   │
+│ 13  │ testCheckoutSuccess                          │ ✅ PASS   │   1417 ms   │
+│ 14  │ testSortProductsLowToHigh                    │ ✅ PASS   │    547 ms   │
+│ 15  │ testEmptyUsernameShowsError                  │ ✅ PASS   │    278 ms   │
+│ 16  │ testOneCharacterCredentialsShowError         │ ✅ PASS   │    606 ms   │
+│ 17  │ runScenario                                  │ ✅ PASS   │   2343 ms   │
+│ 18  │ runScenario                                  │ ✅ PASS   │   2115 ms   │
+│ 19  │ runScenario                                  │ ✅ PASS   │   2727 ms   │
 └─────┴──────────────────────────────────────────────┴──────────┴────────────┘
 
 📈 SUMMARY
 ┌──────────────────────────────────────────────────────────┐
-│ ✅ Passed:       15                                         │
+│ ✅ Passed:       19                                         │
 │ ❌ Failed:       0                                          │
 │ ⊘ Skipped:      0                                          │
-│ 📊 Total:       15                                         │
+│ 📊 Total:       19                                         │
 ├──────────────────────────────────────────────────────────┤
-│ ⏱️  Total Time:  35                                      s │
+│ ⏱️  Total Time:  52                                      s │
 │ ✨ Pass Rate:   100.0                                    % │
 └──────────────────────────────────────────────────────────┘
 
-⏲️  Finished: 2026-04-14 11:13:22
+⏲️  Finished: 2026-04-14 12:56:51
 
 ╔════════════════════════════════════════════════════════════════╗
 ║  🎉 ALL TESTS PASSED! BUILD SUCCESSFUL                       ║

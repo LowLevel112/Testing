@@ -1,6 +1,6 @@
 package com.saucedemo.tests;
 
-import com.messenger.automation.utils.ConfigReader;
+import com.saucedemo.utils.ConfigReader;
 import org.testng.annotations.DataProvider;
 
 public class LoginDataProvider {

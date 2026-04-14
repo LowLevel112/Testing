@@ -7,17 +7,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_AddToCartTest extends BaseTest {
-    private static final String PRODUCT_NAME = "Sauce Labs Backpack";
 
-    @Test(description = "Verify adding product to cart increases badge count and shows in cart")
-    public void testAddToCart_WhenValidProduct_ShouldIncreaseCartBadgeAndShowInCart() {
+    @Test(dataProvider = "productNames", dataProviderClass = ProductDataProvider.class,
+          description = "Verify adding product to cart increases badge count and shows in cart")
+    public void testAddToCart_WhenValidProduct_ShouldIncreaseCartBadgeAndShowInCart(String productName) {
         // GIVEN: User is logged in and on inventory page
         loginAsStandardUser();
         InventoryPage inventoryPage = new InventoryPage(driver, wait);
         CartPage cartPage = new CartPage(driver, wait);
 
         // WHEN: User adds a product to cart
-        inventoryPage.addProductToCart(PRODUCT_NAME);
+        inventoryPage.addProductToCart(productName);
 
         // THEN: Cart badge should show 1 and product should be in cart
         Assert.assertEquals(inventoryPage.getCartBadgeCount(), 1,
@@ -25,7 +25,7 @@ public class TC_AddToCartTest extends BaseTest {
 
         inventoryPage.openCart();
         cartPage.waitUntilLoaded();
-        Assert.assertTrue(cartPage.containsProduct(PRODUCT_NAME),
+        Assert.assertTrue(cartPage.containsProduct(productName),
                 "Cart should contain the added product");
     }
 }

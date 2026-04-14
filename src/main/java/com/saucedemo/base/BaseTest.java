@@ -1,6 +1,6 @@
 package com.saucedemo.base;
 
-import com.messenger.automation.utils.ConfigReader;
+import com.saucedemo.utils.ConfigReader;
 import com.saucedemo.pages.InventoryPage;
 import com.saucedemo.pages.SauceDemoLoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;

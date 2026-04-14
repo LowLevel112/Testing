@@ -1,7 +1,6 @@
 package com.saucedemo.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,8 +11,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class InventoryPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
 
     private final By inventoryContainer = By.id("inventory_container");
     private final By cartLink = By.className("shopping_cart_link");
@@ -37,8 +36,7 @@ public class InventoryPage {
     }
 
     public void openCart() {
-        WebElement cartElement = wait.until(ExpectedConditions.visibilityOfElementLocated(cartLink));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", cartElement);
+        wait.until(ExpectedConditions.elementToBeClickable(cartLink)).click();
     }
 
     public int getCartBadgeCount() {

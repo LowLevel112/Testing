@@ -7,7 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SauceDemoLoginPage {
-    private final WebDriverWait wait;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
 
     private final By usernameInput = By.id("user-name");
     private final By passwordInput = By.id("password");
@@ -15,6 +16,7 @@ public class SauceDemoLoginPage {
     private final By errorContainer = By.className("error-message-container");
 
     public SauceDemoLoginPage(WebDriver driver, WebDriverWait wait) {
+        this.driver = driver;
         this.wait = wait;
     }
 
