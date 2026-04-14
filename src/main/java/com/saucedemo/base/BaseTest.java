@@ -45,14 +45,14 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        baseUrl = ConfigReader.getProperty("base.url");
+        baseUrl = ConfigReader.getProperty("BASE_URL");
         driver.get(baseUrl);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-button")));
     }
 
     protected void loginAsStandardUser() {
-        String user = ConfigReader.getProperty("standard.user");
-        String pass = ConfigReader.getProperty("standard.password");
+        String user = ConfigReader.getProperty("STANDARD_USER");
+        String pass = ConfigReader.getProperty("STANDARD_PASSWORD");
         SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver, wait);
         loginPage.login(user, pass);
         InventoryPage inventory = new InventoryPage(driver, wait);

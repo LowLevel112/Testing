@@ -7,9 +7,9 @@ public class LoginDataProvider {
     @DataProvider(name = "loginCredentials")
     public static Object[][] loginCredentials() {
         return new Object[][]{
-                {ConfigReader.getProperty("standard.user"), ConfigReader.getProperty("standard.password"), null, true},
-                {ConfigReader.getProperty("locked.user"), ConfigReader.getProperty("standard.password"), "Epic sadface: Sorry, this user has been locked out.", false},
-                {ConfigReader.getProperty("wrong.user"), ConfigReader.getProperty("wrong.password"), "Epic sadface: Username and password do not match any user in this service", false}
+                {ConfigReader.getProperty("STANDARD_USER"), ConfigReader.getProperty("STANDARD_PASSWORD"), null, true},
+                {ConfigReader.getProperty("LOCKED_USER"), ConfigReader.getProperty("STANDARD_PASSWORD"), "Epic sadface: Sorry, this user has been locked out.", false},
+                {ConfigReader.getProperty("WRONG_USER"), ConfigReader.getProperty("WRONG_PASSWORD"), "Epic sadface: Username and password do not match any user in this service", false}
         };
     }
 }

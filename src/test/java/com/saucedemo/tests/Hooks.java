@@ -33,7 +33,7 @@ public class Hooks {
         options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        driver.get(ConfigReader.getProperty("base.url"));
+        driver.get(ConfigReader.getProperty("BASE_URL"));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-button")));
     }
 

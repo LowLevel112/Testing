@@ -19,7 +19,7 @@ public class StepDefinitions {
     @Given("I am logged in as {string}")
     public void i_am_logged_in_as(String username) {
         SauceDemoLoginPage login = new SauceDemoLoginPage(driver, wait);
-        login.login(ConfigReader.getProperty("standard.user"), ConfigReader.getProperty("standard.password"));
+        login.login(ConfigReader.getProperty("STANDARD_USER"), ConfigReader.getProperty("STANDARD_PASSWORD"));
         InventoryPage inv = new InventoryPage(driver, wait);
         inv.waitUntilLoaded();
     }

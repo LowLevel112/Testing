@@ -15,7 +15,7 @@ public class TC_LoginTest extends BaseTest {
         SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver, wait);
 
         // WHEN: User enters valid username and password and clicks login
-        loginPage.login(ConfigReader.getProperty("standard.user"), ConfigReader.getProperty("standard.password"));
+        loginPage.login(ConfigReader.getProperty("STANDARD_USER"), ConfigReader.getProperty("STANDARD_PASSWORD"));
 
         // THEN: User should be redirected to inventory page
         wait.until(ExpectedConditions.urlContains("inventory.html"));
