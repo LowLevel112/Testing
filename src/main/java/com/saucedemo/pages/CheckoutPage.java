@@ -1,6 +1,7 @@
 package com.saucedemo.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,7 +30,8 @@ public class CheckoutPage {
     }
 
     public void clickContinue() {
-        wait.until(ExpectedConditions.elementToBeClickable(continueButton)).click();
+        WebElement continueElement = wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", continueElement);
         wait.until(ExpectedConditions.visibilityOfElementLocated(finishButton));
     }
 

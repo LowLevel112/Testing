@@ -29,7 +29,7 @@ cd TestingAutomation
 mvn clean install
 ```
 
-### 3. Cấu hình môi trường (src/test/resources/config.properties)
+### 3. Cấu hình môi trường (.env hoặc config.properties)
 ```properties
 base.url=https://www.saucedemo.com/
 standard.user=standard_user
